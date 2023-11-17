@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    
+    <div class="container">
+
+      <div id="UserDetails" class="userDetailsContainer" style="display: none;">
+        <div class="txtContainerDiv">
+          <div class="loginTitle">Dashboard</div>
+          <div class="descriptionDiv">User Details </div>
+        </div>
+        <div class="inputBtnDiv">
+          <input type="text" placeholder="Add on Database" id="todoInput" class="todoInputField">
+          <button id="addInfoBtn" class="addInfo">Add info to DB</button><br><br>
+        </div>
+
+        <div id="todosConatinerDiv" class="todosContainer"></div>
+
+        <div class="deleteBtnDiv">
+          <button id="logOutBtn" class="logoutBtn"><i class="fa-solid fa-right-from-bracket logoutIcon"></i>Log Out</button>
+        </div>
+      </div>
+
+
+      <div class="linksDivContainer" id="indexLoginSigninBrn">
+        <div class="indexImage">
+          <img src="./laptop-01.png" alt="" />
+        </div>
+        <div class="LSLinks"><a href="loginpage.html">Log In</a></div>
+        <div class="LSLinks"><a href="signuppage.html">Sign Up</a></div>
+      </div>
+
+
+
+    </div>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

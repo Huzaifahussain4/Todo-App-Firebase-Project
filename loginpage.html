@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style.css">
+
+    <title>Document</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="welcomeTitle">
+            <div class="bgImage">
+                <img src="./laptop-01.png" alt="">
+            </div>
+        </div>
+         <div class="registrationDiv">
+            <div class="loginTitle">Welcome Back</div>
+            <div class="descriptionDiv">Enter Your details below</div>
+            <form id="logInForm"  class="registrationFormDiv">
+                <div class="formDivs">
+                    <label>Email</label><input type="email" required  placeholder="Email" id="email" class="inputField">
+                </div>
+                <div class="formDivs">
+                    <label>Password</label>
+                    <input type="password" required  placeholder="Password" id="password" class="inputField">
+                    <a onclick="passChange()" id="passToggleIcon" class="passwordtoggleBtn passdirection">
+                        <i class="fa-solid fa-eye toogleIcon"></i>
+                    </a>
+                </div>
+                <div class="formDivs">
+                    <input type="submit" value="Login" class="submitBtn">
+                </div>
+            </form>
+            <div class="belowLink">Create Account 
+                <a href="./signuppage.html">Sign Up</a>
+            </div>
+        </div>
+    </div>
+    
+
+    <script type="module" src="./script.js"></script>
+
+    <script>
+        var a = 0;
+  
+        const passChange = () => {
+          var icon = document
+            .getElementById("passToggleIcon")
+            .getElementsByTagName("i")[0];
+  
+          if (a == 1) {
+            document.getElementById("password").type = "password";
+            icon.className = "fa-solid fa-eye";
+            a = 0;
+          } else {
+            document.getElementById("password").type = "text";
+            icon.className = "fa-solid fa-eye-slash";
+            a = 1;
+          }
+        };
+      </script>
+
+</body>
+</html>
