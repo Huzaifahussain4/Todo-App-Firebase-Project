@@ -18,7 +18,7 @@
     <div class="container">
       <div class="welcomeTitle">
         <div class="bgImage">
-            <img src="./laptop-01.png" alt="">
+          <img src="./laptop-01.png" alt="" />
         </div>
       </div>
       <div class="registrationDiv">
@@ -47,20 +47,32 @@
               class="inputField"
             />
           </div>
-          <div class="formDivs">
-            <label>Password</label>
-            <input
-              type="password"
-              required
-              placeholder="Password"
-              id="password"
-              class="inputField"
-              id="passwordField"
-            />
-            <!-- <input type="checkbox" class="passwordtoggleBtn" id="passwordtoggleBox"> -->
-            <a onclick="passChange()" id="passToggleIcon" class="passwordtoggleBtn">
-              <i class="fa-solid fa-eye toogleIcon"></i
-            ></a>
+          <div class="formDivs"> 
+            
+            <div class="passSubDiv">
+              <label>Password</label>
+              <div class="loginEmailDiv">
+                <div class="loginPasswordSubParent">
+                  <input
+                    id="password"
+                    placeholder="Password"
+                    class="inputField passInput"
+                    type="password"
+                    required
+                    name="password"
+                  />
+                  <div
+                    onclick="passChange()"
+                    class="loginInputEyeIconDiv"
+                    id="passToggleIcon"
+                  >
+                    <span><i class="fa-solid fa-eye toogleIcon"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           </div>
           <div class="formDivs">
             <input type="submit" value="Register" class="submitBtn" />
@@ -73,13 +85,7 @@
       </div>
     </div>
 
-
-    
-
     <script type="module" src="./script.js"></script>
-
-
-
 
     <script>
       var a = 0;

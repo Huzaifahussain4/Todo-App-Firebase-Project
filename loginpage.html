@@ -23,6 +23,7 @@
                 <img src="./laptop-01.png" alt="">
             </div>
         </div>
+        
          <div class="registrationDiv">
             <div class="loginTitle">Welcome Back</div>
             <div class="descriptionDiv">Enter Your details below</div>
@@ -31,11 +32,29 @@
                     <label>Email</label><input type="email" required  placeholder="Email" id="email" class="inputField">
                 </div>
                 <div class="formDivs">
-                    <label>Password</label>
-                    <input type="password" required  placeholder="Password" id="password" class="inputField">
-                    <a onclick="passChange()" id="passToggleIcon" class="passwordtoggleBtn passdirection">
-                        <i class="fa-solid fa-eye toogleIcon"></i>
-                    </a>
+
+                    <div class="passSubDiv">
+                        <label>Password</label>
+                        <div class="loginEmailDiv">
+                          <div class="loginPasswordSubParent">
+                            <input
+                              id="password"
+                              placeholder="Password"
+                              class="inputField passInput"
+                              type="password"
+                              required
+                              name="password"
+                            />
+                            <div
+                              onclick="passChange()"
+                              class="loginInputEyeIconDiv"
+                              id="passToggleIcon"
+                            >
+                              <span ><i class="fa-solid fa-eye toogleIcon"></i></span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
                 <div class="formDivs">
                     <input type="submit" value="Login" class="submitBtn">

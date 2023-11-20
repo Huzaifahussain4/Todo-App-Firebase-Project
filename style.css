@@ -6,6 +6,9 @@
     box-sizing: border-box;
 }
 
+body{
+    overflow: hidden;
+}
 
 
 
@@ -179,6 +182,7 @@ label {
 }
 
 .inputField {
+    position: relative;
     padding: 10px;
     width: 40%;
     height: 50px;
@@ -195,33 +199,6 @@ label {
 .inputField:focus {
     border: 2px solid #6b3ab6;
     background-color: #38343a;
-}
-
-.passwordtoggleBtn {
-    position: absolute;
-    top: 65.5%;
-    right: 16.5%;
-    /* transform: translate(0%, -51%); */
-}
-
-.passdirection {
-    position: absolute;
-    top: 58.5%;
-    right: 16.5%;
-}
-
-.passwordtoggleBtn {
-    color: #fff;
-    width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* margin-left: 10px; */
-}
-
-.passwordtoggleBtn>i {
-    font-size: 18px;
-    transition: 0.3s;
 }
 
 .submitBtn {
@@ -266,7 +243,7 @@ label {
     color: #622aab;
 }
 
-.userDetailsContainer{
+.userDetailsContainer {
     width: 50%;
     display: flex;
     align-items: center;
@@ -288,7 +265,7 @@ label {
     }
 }
 
-.txtContainerDiv{
+.txtContainerDiv {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -296,7 +273,7 @@ label {
     justify-content: center;
 }
 
-.inputBtnDiv{
+.inputBtnDiv {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -304,7 +281,7 @@ label {
     margin: 20px;
 }
 
-.addInfo{
+.addInfo {
     width: 20%;
     height: 50px;
     border-radius: 10px;
@@ -318,7 +295,7 @@ label {
     margin-left: 10px;
 }
 
-.todoInputField{
+.todoInputField {
     padding: 10px;
     width: 40%;
     height: 50px;
@@ -332,14 +309,54 @@ label {
 }
 
 
-.todosContainer{
+.todosContainer {
     /* width: 50%; */
+    padding-top: 10px; /* Decreased padding-top */
+    height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: tableAnimation 0.75s;
+    overflow: auto;
+}
 
+
+.todosContainer::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+.todosContainer::-webkit-scrollbar-track {
+    background: #e0e0e0;
+    /* color of the tracking area */
+}
+
+.todosContainer::-webkit-scrollbar-thumb {
+    background-color: #212A3E;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    /* border: 3px solid #e0e0e0; */
+    /* creates padding around scroll thumb */
+}
+
+.todosContainer::-webkit-scrollbar {
+    width: 12px;
+    /* width of the entire scrollbar */
+}
+
+.todosContainer::-webkit-scrollbar-track {
+    background: transparent;
+    /* color of the tracking area */
+}
+
+.todosContainer::-webkit-scrollbar-thumb {
+    background-color: #7632cc;
+    /* color of the scroll thumb */
+    border-radius: 20px;
+    /* roundness of the scroll thumb */
+    /* border: 3px solid #e0e0e0; */
+    /* creates padding around scroll thumb */
 }
 
 @keyframes tableAnimation {
@@ -355,7 +372,7 @@ label {
     }
 }
 
-.todoSpanDiv{
+.todoSpanDiv {
     width: 58%;
     display: flex;
     align-items: center;
@@ -364,14 +381,14 @@ label {
     border-bottom: 2px solid #7632cc;
 }
 
-.todoSpan{
+.todoSpan {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     /* margin-bottom: 10px; */
 }
 
-.deleteBtn{
+.deleteBtn {
     width: 20%;
     height: 50px;
     border-radius: 10px;
@@ -386,12 +403,12 @@ label {
     transition: 0.3s;
 }
 
-.deleteBtn:hover{
+.deleteBtn:hover {
     background-color: #cd3c3c;
-    
+
 }
 
-.deleteBtnDiv{
+.deleteBtnDiv {
     margin-top: 50px;
     width: 100%;
     display: flex;
@@ -399,29 +416,346 @@ label {
     justify-content: center;
 }
 
-.logoutBtn{
-    width: 20%;
-    height: 50px;
-    border-radius: 10px;
-    background-color: #e84343;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    color: #fff;
-    outline: none;
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
     border: none;
+    border-radius: 50%;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  
+  .sign svg {
+    width: 17px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
+
+
+.loginPasswordInput {
+    border: none;
+    outline: none;
+    background-color: #EEF5FD;
+    padding: 17px;
+    border-radius: 10px 0px 0px 10px;
+    width: 90%;
+}
+
+.loginEmailDiv {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.loginPasswordInput {
+    border: none;
+    outline: none;
+    background-color: #EEF5FD;
+    padding: 17px;
+    border-radius: 10px 0px 0px 10px;
+    width: 90%;
+}
+
+.loginInputEyeIconDiv {
+    color: #fff;
+    padding: 14px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #4f4f53;
+    margin-left: 5px;
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    margin-top: 10px;
     transition: 0.3s;
 }
 
-.logoutBtn:hover{
-    background-color: #cd3c3c;
-    
+.loginInputEyeIconDiv:hover{
+    border: 2px solid #7632cc;
+    background-color: #38343a;
 }
 
-.logoutIcon{
-    font-size: 22px;
-    margin-right: 10px;
+.toogleIcon::before{
+    color: #fff;
 }
+.toogleIcon:hover{
+    color: #7632cc;
+}
+
+.loginPasswordSubParent {
+    width: 100%;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.passInput {
+    width: 80%;
+}
+
+.passSubDiv{
+    width: 40%;
+}
+
+
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: .3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: .3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+  }
+  
+  .button:hover .svgIcon {
+    width: 50px;
+    transition-duration: .3s;
+    transform: translateY(60%);
+  }
+  
+  .button::before {
+    position: absolute;
+    top: -20px;
+    content: "Delete";
+    color: white;
+    transition-duration: .3s;
+    font-size: 2px;
+  }
+  
+  .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition-duration: .3s;
+  }
+
+/* 
+  @media only screen and (max-width: 1000px) {
+    .container {
+      background-color: lightblue;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .loginTitle{
+        width: 300px;
+        font-size: 35px;
+    }
+
+    .descriptionDiv{
+        width: 300px;
+    }
+
+    .passSubDiv{
+        width: 50%;
+    }
+
+    .inputField{
+        width: 10%;
+    }
+  } */
+
+  .loader {
+    width: 80px;
+    height: 50px;
+    position: relative;
+  }
+  
+  .loader-text {
+    position: absolute;
+    top: 0;
+    padding: 0;
+    margin: 0;
+    color: #C8B6FF;
+    animation: text_713 3.5s ease both infinite;
+    font-size: .8rem;
+    letter-spacing: 1px;
+  }
+  
+  .load {
+    background-color: #9A79FF;
+    border-radius: 50px;
+    display: block;
+    height: 16px;
+    width: 16px;
+    bottom: 0;
+    position: absolute;
+    transform: translateX(64px);
+    animation: loading_713 3.5s ease both infinite;
+  }
+  
+  .load::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #D1C2FF;
+    border-radius: inherit;
+    animation: loading2_713 3.5s ease both infinite;
+  }
+  
+  @keyframes text_713 {
+    0% {
+      letter-spacing: 1px;
+      transform: translateX(0px);
+    }
+  
+    40% {
+      letter-spacing: 2px;
+      transform: translateX(26px);
+    }
+  
+    80% {
+      letter-spacing: 1px;
+      transform: translateX(32px);
+    }
+  
+    90% {
+      letter-spacing: 2px;
+      transform: translateX(0px);
+    }
+  
+    100% {
+      letter-spacing: 1px;
+      transform: translateX(0px);
+    }
+  }
+  
+  @keyframes loading_713 {
+    0% {
+      width: 16px;
+      transform: translateX(0px);
+    }
+  
+    40% {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  
+    80% {
+      width: 16px;
+      transform: translateX(64px);
+    }
+  
+    90% {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  
+    100% {
+      width: 16px;
+      transform: translateX(0px);
+    }
+  }
+  
+  @keyframes loading2_713 {
+    0% {
+      transform: translateX(0px);
+      width: 16px;
+    }
+  
+    40% {
+      transform: translateX(0%);
+      width: 80%;
+    }
+  
+    80% {
+      width: 100%;
+      transform: translateX(0px);
+    }
+  
+    90% {
+      width: 80%;
+      transform: translateX(15px);
+    }
+  
+    100% {
+      transform: translateX(0px);
+      width: 16px;
+    }
+  }
+   
+   
+  
+  

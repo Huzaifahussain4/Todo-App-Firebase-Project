@@ -41,21 +41,25 @@ let logOutBtn = document.getElementById("logOutBtn");
 let addInfoBtn = document.getElementById("addInfoBtn");
 let todoInputField = document.getElementById("todoInput");
 let todosConatiner = document.getElementById("todosConatinerDiv");
+let loaderDiv = document.getElementById("loaderDiv");
 
 
 let todoCollection = collection(db, "todos");
 
 onAuthStateChanged(auth, (user) => {
+  
   if (user) {
     const uid = user.uid;
     console.log("User Logged in");
 
     indexLoginSigninBrnDiv.style.display = "none";
+    loaderDiv.style.display= 'none'
     userDetailsDiv.style.display = "block";
-
+    
     getTodos()
   } else {
     console.log("User not Logged in");
+    loaderDiv.style.display= 'block'
   }
 });
 
